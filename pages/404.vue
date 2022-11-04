@@ -1,9 +1,14 @@
 <template>
   <div>
-    <Nav />
     <div class="container">
-      <h1>Page not found</h1>
-      <a href="/restaurants">Go back</a>
+      <NuxtLayout name="error">
+        <template #header>
+          <h1>Page not found</h1>
+        </template>
+        <template #redirectEl>
+          <a href="/">Go back</a>
+        </template>
+      </NuxtLayout>
     </div>
   </div>
 </template>
