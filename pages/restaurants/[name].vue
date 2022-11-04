@@ -2,9 +2,19 @@
 import restaurants from '@/data.json';
 
 const route = useRoute();
-const name = route.params.name;
+const name: string = route.params.name as string;
 
 const restaurant = restaurants.find(r => r.name === name);
+
+useHead({
+  title: restaurant ? name : 'Not Found',
+  meta: [
+    {
+      name: 'viewport',
+      content: 'width=device-width',
+    }
+  ]
+})
 </script>
 
 <template>
